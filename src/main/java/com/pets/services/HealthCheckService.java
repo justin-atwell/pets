@@ -2,10 +2,10 @@ package com.pets.services;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Component
 public interface HealthCheckService {
 
-    Date getHealthCheckDate();
+    LocalDateTime getHealthCheckDate();
 }

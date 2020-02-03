@@ -1,10 +1,5 @@
 package com.pets.configuration;
 
-//import Repo interface
-//import Repo Impl
-//import Service interface
-//import Service Impl
-
 import com.pets.repository.HealthCheckRepository;
 import com.pets.repository.HealthCheckRepositoryImpl;
 import com.pets.services.HealthCheckService;

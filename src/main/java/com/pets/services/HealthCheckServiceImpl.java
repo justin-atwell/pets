@@ -2,7 +2,7 @@ package com.pets.services;
 
 import com.pets.repository.HealthCheckRepository;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class HealthCheckServiceImpl implements HealthCheckService{
 
@@ -12,7 +12,7 @@ public class HealthCheckServiceImpl implements HealthCheckService{
         this.healthCheckRepository = repository;
     }
 
-    public Date getHealthCheckDate() {
+    public LocalDateTime getHealthCheckDate() {
         return healthCheckRepository.healthCheckDate();
     }
 }

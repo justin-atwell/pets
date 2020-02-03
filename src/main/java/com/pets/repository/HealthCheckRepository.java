@@ -1,8 +1,8 @@
 package com.pets.repository;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 public interface HealthCheckRepository {
-    Date healthCheckDate();
+    LocalDateTime healthCheckDate();
 }
