@@ -1,4 +1,4 @@
-package selenium.tests;
+package com.pets.selenium.tests;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
