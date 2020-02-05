@@ -11,10 +11,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class PetsApplication {
 
     public static void main(String[] args) {
-       // ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        //HealthCheckService service = appContext.getBean("healthCheckService", HealthCheckService.class);
-        SpringApplication.run(PetsApplication.class, args);
+        //SpringApplication.run(PetsApplication.class, args);
+
+        ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        HealthCheckService service = appContext.getBean("healthCheckService", HealthCheckService.class);
+
+        System.out.println(service);
+        System.out.println(service.getHealthCheckDate());
+
     }
 
 }
