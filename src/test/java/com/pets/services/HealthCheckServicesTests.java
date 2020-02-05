@@ -8,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest(classes = SpringBootApplication.class)
 public class HealthCheckServicesTests {
@@ -19,20 +21,15 @@ public class HealthCheckServicesTests {
     @Autowired
     private HealthCheckService service;
 
-   // @Test
-    //private static final String DATE_FORMATTER= "yyyy-MM-dd HH:mm:ss";
+    @Test
+    public void getHealthCheckDateReturnsCurrentDateTime() throws Exception {
+        LocalDateTime rightNow = LocalDateTime.now();
 
-    /*public static void main(String[] args) {
+        when(repository.getHealthCheckDate()).thenReturn(rightNow);
 
-        String DATE_FORMATTER= "yyyy-MM-dd HH:mm:ss";
+        LocalDateTime result = service.getHealthCheckDate();
 
-        LocalDateTime localDateTime = LocalDateTime.now(); //get current date time
-        System.out.println("Current Time " + localDateTime);
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMATTER);
-        String formatDateTime = localDateTime.format(formatter);
-
-        System.out.println("Formatted Time :" +formatDateTime);
-
-    }*/
+        //assertThat(result, rightNow);
+        assertEquals(result, rightNow);
+    }
 }

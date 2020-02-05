@@ -4,5 +4,5 @@ import java.time.LocalDateTime;
 
 
 public interface HealthCheckRepository {
-    LocalDateTime healthCheckDate();
+    LocalDateTime getHealthCheckDate();
 }

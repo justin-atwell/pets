@@ -10,13 +10,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
-    @Bean
-    public HealthCheckService healthCheckService() {
-        return new HealthCheckServiceImpl(repository());
+    @Bean(name = "healthCheckService")
+    public HealthCheckService getHealthCheckService() {
+
+        //return new HealthCheckServiceImpl();
+        HealthCheckServiceImpl service = new HealthCheckServiceImpl(getHealthCheckRepository());
+        //service.setRepository(getHealthCheckRepository());
+        return service;
     }
 
-    @Bean
-    public HealthCheckRepository repository() {
+    @Bean(name = "healthCheckRepository")
+    public HealthCheckRepository getHealthCheckRepository() {
+
         return new HealthCheckRepositoryImpl();
     }
 }
