@@ -9,5 +9,6 @@ public class BaseTests {
     @Test
     public void openBrowser() {
         chromeDriver.get("http://www.google.com");
+        //chromeDriver.get("http://localhost:8080");
     }
 }

@@ -1,4 +1,4 @@
-package com.pets.repositories;
+package com.pets.repository;
 
 public interface DogRepository {
 }
