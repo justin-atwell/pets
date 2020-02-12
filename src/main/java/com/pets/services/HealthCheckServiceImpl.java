@@ -18,13 +18,13 @@ public class HealthCheckServiceImpl implements HealthCheckService{
     }*/
     @Autowired
     public HealthCheckServiceImpl (HealthCheckRepository healthCheckRepository) {
-        System.out.println("SpeakerServiceImpl repository constructor");
+        System.out.println("HealthCheckServiceImpl repository constructor");
         healthCheckRepository = healthCheckRepository;
     }
 
    //@Autowired
     public void setRepository(HealthCheckRepository repository) {
-        System.out.println("SpeakerServiceImpl setter");
+        System.out.println("HealthCheckServiceImpl setter");
         this.healthCheckRepository = repository;
     }
 

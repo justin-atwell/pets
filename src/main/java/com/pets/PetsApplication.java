@@ -12,14 +12,14 @@ public class PetsApplication {
 
     public static void main(String[] args) {
 
-        //SpringApplication.run(PetsApplication.class, args);
+        SpringApplication.run(PetsApplication.class, args);
 
-        ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        //ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        HealthCheckService service = appContext.getBean("healthCheckService", HealthCheckService.class);
+        //HealthCheckService service = appContext.getBean("healthCheckService", HealthCheckService.class);
 
-        System.out.println(service);
-        System.out.println(service.getHealthCheckDate());
+        //System.out.println(service);
+        //System.out.println(service.getHealthCheckDate());
 
     }
 

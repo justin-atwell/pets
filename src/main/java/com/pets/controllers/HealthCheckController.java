@@ -14,6 +14,10 @@ public class HealthCheckController {
 
     private HealthCheckService service;
 
+    public HealthCheckController(HealthCheckService service) {
+        this.service = service;
+    }
+
     @GetMapping()
     public LocalDateTime healthCheck() {
         return service.getHealthCheckDate();
