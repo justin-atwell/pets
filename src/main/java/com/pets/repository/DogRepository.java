@@ -10,4 +10,5 @@ public interface DogRepository {
     DogBreeds getAllBreeds() throws IOException;
     Dog getRandomImage() throws IOException;
     DogLists getAllImages() throws IOException;
+    DogLists getSomeImages(int number) throws IOException;
 }

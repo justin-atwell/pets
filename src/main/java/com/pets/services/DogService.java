@@ -15,4 +15,5 @@ public interface DogService {
     Dog getRandomImage() throws IOException;
 
     DogLists getAllImages() throws IOException;
+    DogLists getSomeImages(int number) throws IOException;
 }

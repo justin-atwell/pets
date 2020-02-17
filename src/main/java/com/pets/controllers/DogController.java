@@ -6,6 +6,7 @@ import com.pets.models.DogLists;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,5 +37,11 @@ public class DogController {
     @RequestMapping("/images")
     public DogLists getAllImages() throws IOException {
         return service.getAllImages();
+    }
+
+    @GetMapping
+    @RequestMapping("/images/{number}")
+    public DogLists getSomeImages(@PathVariable("number") int number) throws IOException {
+        return service.getSomeImages(number);
     }
 }

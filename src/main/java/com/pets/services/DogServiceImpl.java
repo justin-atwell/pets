@@ -25,4 +25,8 @@ public class DogServiceImpl implements DogService {
     public DogLists getAllImages() throws IOException {
         return repo.getAllImages();
     }
+
+    public DogLists getSomeImages(int number) throws IOException {
+        return repo.getSomeImages(number);
+    }
 }
