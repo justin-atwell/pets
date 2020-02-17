@@ -2,7 +2,7 @@ package com.pets.controllers;
 
 import com.pets.models.Dog;
 import com.pets.models.DogBreeds;
-import com.pets.models.DogImages;
+import com.pets.models.DogLists;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +34,7 @@ public class DogController {
 
     @GetMapping
     @RequestMapping("/images")
-    public DogImages getAllImages() throws IOException {
+    public DogLists getAllImages() throws IOException {
         return service.getAllImages();
     }
 }

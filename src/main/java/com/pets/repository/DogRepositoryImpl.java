@@ -3,7 +3,7 @@ package com.pets.repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pets.models.Dog;
 import com.pets.models.DogBreeds;
-import com.pets.models.DogImages;
+import com.pets.models.DogLists;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -63,7 +63,7 @@ public class DogRepositoryImpl implements DogRepository{
             }
         }
 
-        public DogImages getAllImages() throws IOException {
+        public DogLists getAllImages() throws IOException {
             URL url =new URL(getAllImagesString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod(("GET"));
@@ -73,10 +73,10 @@ public class DogRepositoryImpl implements DogRepository{
             if(responseCode == HttpURLConnection.HTTP_OK) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String output;
-                DogImages images = new DogImages();
+                DogLists images = new DogLists();
 
                 while((output = reader.readLine()) != null) {
-                    images = new ObjectMapper().readValue(output, DogImages.class);
+                    images = new ObjectMapper().readValue(output, DogLists.class);
                 }
                 return images;
             }

@@ -2,7 +2,7 @@ package com.pets.services;
 
 import com.pets.models.Dog;
 import com.pets.models.DogBreeds;
-import com.pets.models.DogImages;
+import com.pets.models.DogLists;
 import com.pets.repository.DogRepository;
 import com.pets.repository.DogRepositoryImpl;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class DogServiceImpl implements DogService {
         return repo.getRandomImage();
     }
 
-    public DogImages getAllImages() throws IOException {
+    public DogLists getAllImages() throws IOException {
         return repo.getAllImages();
     }
 }

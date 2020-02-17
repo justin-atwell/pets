@@ -2,7 +2,7 @@ package com.pets.models;
 
 import java.util.ArrayList;
 
-public class DogImages {
+public class DogLists {
 
     private ArrayList<String> message;
     private String status;

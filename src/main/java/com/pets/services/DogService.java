@@ -2,7 +2,7 @@ package com.pets.services;
 
 import com.pets.models.Dog;
 import com.pets.models.DogBreeds;
-import com.pets.models.DogImages;
+import com.pets.models.DogLists;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -14,5 +14,5 @@ public interface DogService {
     //Dog getAllBreeds() throws IOException;
     Dog getRandomImage() throws IOException;
 
-    DogImages getAllImages() throws IOException;
+    DogLists getAllImages() throws IOException;
 }
