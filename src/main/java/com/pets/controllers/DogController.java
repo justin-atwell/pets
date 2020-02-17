@@ -1,12 +1,9 @@
 package com.pets.controllers;
 
 import com.pets.models.Dog;
-import com.pets.models.DogBreeds;
-import com.pets.models.DogLists;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,25 +20,10 @@ public class DogController {
     }
 
     @GetMapping
-    public DogBreeds getAllBreeds() throws IOException {
-        return service.getAllBreeds();
-    }
-
-    @GetMapping
     @RequestMapping("/random")
     public Dog getRandomImage() throws IOException {
         return service.getRandomImage();
     }
 
-    @GetMapping
-    @RequestMapping("/images")
-    public DogLists getAllImages() throws IOException {
-        return service.getAllImages();
-    }
 
-    @GetMapping
-    @RequestMapping("/images/{number}")
-    public DogLists getSomeImages(@PathVariable("number") int number) throws IOException {
-        return service.getSomeImages(number);
-    }
 }
