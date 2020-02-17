@@ -6,18 +6,18 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Dog {
 
-    private List<Breed> message;
+    private String message;
     private String status;
 
     public Dog() {
 
     }
 
-    public List<Breed> getMessage() {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(List<Breed> message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 

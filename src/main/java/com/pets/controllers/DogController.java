@@ -1,6 +1,7 @@
 package com.pets.controllers;
 
 import com.pets.models.Dog;
+import com.pets.models.DogBreeds;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,13 @@ public class DogController {
     }
 
     @GetMapping
-    public Dog getAllBreeds() throws IOException {
+    public DogBreeds getAllBreeds() throws IOException {
         return service.getAllBreeds();
+    }
+
+    @GetMapping
+    @RequestMapping("/random")
+    public Dog getRandomImage() throws IOException {
+        return service.getRandomImage();
     }
 }
