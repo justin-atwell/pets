@@ -1,22 +1,17 @@
 package com.pets.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.ArrayList;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Dog {
+public class DogImages {
 
-    private String message;
+    private ArrayList<String> message;
     private String status;
 
-    public Dog() {
-
-    }
-
-    public String getMessage() {
+    public ArrayList<String> getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(ArrayList<String> message) {
         this.message = message;
     }
 

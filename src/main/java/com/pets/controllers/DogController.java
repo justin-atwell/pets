@@ -2,6 +2,7 @@ package com.pets.controllers;
 
 import com.pets.models.Dog;
 import com.pets.models.DogBreeds;
+import com.pets.models.DogImages;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/dogs")
@@ -31,5 +30,11 @@ public class DogController {
     @RequestMapping("/random")
     public Dog getRandomImage() throws IOException {
         return service.getRandomImage();
+    }
+
+    @GetMapping
+    @RequestMapping("/images")
+    public DogImages getAllImages() throws IOException {
+        return service.getAllImages();
     }
 }

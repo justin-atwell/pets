@@ -1,19 +1,15 @@
 package com.pets.repository;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pets.models.Breed;
 import com.pets.models.Dog;
 import com.pets.models.DogBreeds;
-import org.springframework.web.client.RestTemplate;
+import com.pets.models.DogImages;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DogRepositoryImpl implements DogRepository{
 
@@ -21,8 +17,9 @@ public class DogRepositoryImpl implements DogRepository{
 
     private static final String getRandomImageString = "https://dog.ceo/api/breeds/image/random";
 
+    private static final String getAllImagesString = "https://dog.ceo/api/breed/hound/images";
+
         public DogBreeds getAllBreeds() throws IOException {
-        //public Dog getAllBreeds() throws IOException {
 
             URL url = new URL(getAllString);
             HttpURLConnection connection =  (HttpURLConnection) url.openConnection();
@@ -52,7 +49,6 @@ public class DogRepositoryImpl implements DogRepository{
             int responseCode = connection.getResponseCode();
 
             if(responseCode == HttpURLConnection.HTTP_OK) {
-                //return null;
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String output;
                 Dog response = new Dog();
@@ -65,5 +61,28 @@ public class DogRepositoryImpl implements DogRepository{
             else {
                 return null;
             }
+        }
+
+        public DogImages getAllImages() throws IOException {
+            URL url =new URL(getAllImagesString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod(("GET"));
+
+            int responseCode = connection.getResponseCode();
+
+            if(responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String output;
+                DogImages images = new DogImages();
+
+                while((output = reader.readLine()) != null) {
+                    images = new ObjectMapper().readValue(output, DogImages.class);
+                }
+                return images;
+            }
+            else {
+                return null;
+            }
+
         }
 }
