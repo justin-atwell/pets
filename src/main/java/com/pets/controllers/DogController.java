@@ -1,12 +1,15 @@
 package com.pets.controllers;
 
+import com.pets.models.Dog;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/dogs")
@@ -19,7 +22,7 @@ public class DogController {
     }
 
     @GetMapping
-    public ArrayList<String> getAllBreeds() {
+    public Dog getAllBreeds() throws IOException {
         return service.getAllBreeds();
     }
 }
