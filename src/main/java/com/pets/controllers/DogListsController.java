@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/lists")
+@RequestMapping("/image")
 public class DogListsController {
 
     private DogListsService service = new DogListsServiceImpl();
@@ -20,14 +20,20 @@ public class DogListsController {
     }
 
     @GetMapping
-    @RequestMapping("/images")
+    @RequestMapping("/random")
     public DogLists getAllImages() throws IOException {
         return service.getAllImages();
     }
 
     @GetMapping
-    @RequestMapping("/images/{number}")
+    @RequestMapping("/random/{number}")
     public DogLists getSomeImages(@PathVariable("number") int number) throws IOException {
         return service.getSomeImages(number);
+    }
+
+    @GetMapping
+    @RequestMapping("/{breed}")
+    public DogLists getImagesByBreed(@PathVariable("breed") String breed) throws IOException {
+        return service.getImagesByBreed(breed);
     }
 }

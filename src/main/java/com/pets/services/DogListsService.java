@@ -9,4 +9,5 @@ import java.io.IOException;
 public interface DogListsService {
     DogLists getAllImages() throws IOException;
     DogLists getSomeImages(int number) throws IOException;
+    DogLists getImagesByBreed(String breed) throws IOException;
 }
