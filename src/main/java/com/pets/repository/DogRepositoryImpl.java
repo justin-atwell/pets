@@ -12,15 +12,9 @@ import java.net.HttpURLConnection;
 
 public class DogRepositoryImpl implements DogRepository{
 
-
-
     private static final String getRandomImageString = "https://dog.ceo/api/breeds/image/random";
 
-
-
     private Connections connect = new Connections();
-
-
 
         public Dog getRandomImage() throws IOException {
             HttpURLConnection connection = connect.getConnection(getRandomImageString);

@@ -1,6 +1,7 @@
 package com.pets.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pets.models.Dog;
 import com.pets.models.DogLists;
 
 import java.io.BufferedReader;
@@ -74,5 +75,26 @@ public class DogListsRepositoryImpl implements DogListsRepository{
             return null;
         }
 
+    }
+
+    public DogLists getRandomImage() throws IOException {
+        String getRandomImageString = "https://dog.ceo/api/breeds/image/random";
+        HttpURLConnection connection = connect.getConnection(getRandomImageString);
+
+        int responseCode = connection.getResponseCode();
+
+        if(responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String output;
+            DogLists response = new DogLists();
+            while((output = reader.readLine()) != null) {
+                response = new ObjectMapper().readValue(output, DogLists.class);
+
+            }
+            return response;
+        }
+        else {
+            return null;
+        }
     }
 }

@@ -1,9 +1,12 @@
 package com.pets.controllers;
 
 import com.pets.models.Dog;
+import com.pets.models.DogObjects;
+import com.pets.models.DogLists;
 import com.pets.services.DogService;
 import com.pets.services.DogServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

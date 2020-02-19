@@ -1,5 +1,6 @@
 package com.pets.controllers;
 
+import com.pets.models.Dog;
 import com.pets.models.DogLists;
 import com.pets.services.DogListsService;
 import com.pets.services.DogListsServiceImpl;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/image")
+@RequestMapping("/dogImages")
 public class DogListsController {
 
     private DogListsService service = new DogListsServiceImpl();

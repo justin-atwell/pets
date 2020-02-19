@@ -1,5 +1,6 @@
 package com.pets.services;
 
+import com.pets.models.Dog;
 import com.pets.models.DogLists;
 import com.pets.repository.DogListsRepository;
 import com.pets.repository.DogListsRepositoryImpl;

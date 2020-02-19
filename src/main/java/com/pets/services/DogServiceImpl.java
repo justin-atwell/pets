@@ -13,8 +13,6 @@ public class DogServiceImpl implements DogService {
 
     private DogRepository repo = new DogRepositoryImpl();
 
-
-
     public Dog getRandomImage() throws IOException {
         return repo.getRandomImage();
     }
