@@ -1,15 +1,15 @@
-package com.pets.services;
+package com.accounts.services;
 
-public class Pet {
+public class Account {
     private String name;
-    private String breed;
+    private String accountType;
 
     public String getName() {
         return this.name;
     }
 
-    public String getBreed() {
-        return this.breed;
+    public String getAccountType() {
+        return this.accountType;
     }
 
     public void setName(String name) {

@@ -1,13 +1,13 @@
-package com.pets;
+package com.accounts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PetsApplication {
+public class AccountsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PetsApplication.class, args);
+        SpringApplication.run(AccountsApplication.class, args);
     }
 
 }
