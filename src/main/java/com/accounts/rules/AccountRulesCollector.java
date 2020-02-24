@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AccountRulesCollector implements RulesCollector {
 
-    public List<IRule> getRulesForAccountName() {
+    public List<IRule> getRulesForAccountName()  {
         return new ArrayList<IRule>(Collections.singleton(new AccountNameRules()));
     }
 }

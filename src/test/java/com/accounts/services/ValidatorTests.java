@@ -27,6 +27,9 @@ public class ValidatorTests {
     @Mock
     private RulesCollector collector = new AccountRulesCollector();
 
+    @Mock
+    private AccountNameRules nameRules = new AccountNameRules();
+
     List<IRule> rules = new ArrayList<>();
 
     @Test
@@ -64,6 +67,19 @@ public class ValidatorTests {
         List<String> result = validator.validateAccounts(new Account());
 
         assertThrows(MissingAccountException.class, () -> collector.getRulesForAccountName());
+    }
 
+    @Test
+    public void ruleIsNullThrowsNullPointerException() throws NullPointerException, MissingAccountException {
+
+        List<IRule> rules = new ArrayList<IRule>();
+
+        rules.add(nameRules);
+
+        when(rules.get(0).shouldRun(any())).thenThrow(new NullPointerException());
+
+        List<String> result = validator.validateAccounts(new Account());
+
+        assertThrows(NullPointerException.class, () -> rules.get(0).shouldRun(any()));
     }
 }

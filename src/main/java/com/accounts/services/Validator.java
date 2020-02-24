@@ -19,14 +19,17 @@ public class Validator {
 
         try {
 
-            for (IRule rule : collector.getRulesForAccountName()) {
+            List<IRule> rulesForAccountName = collector.getRulesForAccountName();
+            for (IRule rule : rulesForAccountName) {
                 if (rule.shouldRun(account)) {
                     errors.addAll(rule.runRule(account));
                 }
             }
         }
-        catch(MissingAccountException ex)
+        catch(MissingAccountException maex)
         {
+
+        } catch (NullPointerException nex) {
 
         }
         return errors;
