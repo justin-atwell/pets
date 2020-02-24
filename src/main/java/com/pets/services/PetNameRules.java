@@ -6,7 +6,7 @@ import java.util.List;
 public class PetNameRules implements IRule {
 
     public boolean shouldRun(Pet pet) {
-        return pet.getName() == "Jackie Chan";
+        return false;
     }
 
     public List runRule(Pet pet) {

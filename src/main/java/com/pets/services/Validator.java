@@ -1,22 +1,22 @@
 package com.pets.services;
 
+import com.pets.rules.RulesCollector;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Validator {
-    private final List<IRule> rules;
+    private RulesCollector collector;
 
-    public Validator() {
-        rules = Collections.unmodifiableList(Arrays.asList(new PetNameRules(), new PetBreedRules()));
+    public Validator(RulesCollector collector) {
+        this.collector = collector;
     }
 
     public List<String> validatePets(Pet pet) {
 
         List<String> errors = new ArrayList<>();
 
-        for (IRule rule : rules) {
+        for (IRule rule : collector.getRulesForAccountName()) {
             if (rule.shouldRun(pet)){
                 errors.addAll(rule.runRule(pet));
             }

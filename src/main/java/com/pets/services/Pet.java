@@ -11,4 +11,8 @@ public class Pet {
     public String getBreed() {
         return this.breed;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
