@@ -14,11 +14,9 @@ public class Validator {
     }
 
     public List<String> validateAccounts(Account account) {
-
         List<String> errors = new ArrayList<>();
 
         try {
-
             List<IRule> rulesForAccountName = collector.getRulesForAccountName();
             for (IRule rule : rulesForAccountName) {
                 if (rule.shouldRun(account)) {
